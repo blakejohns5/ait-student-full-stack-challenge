@@ -1,0 +1,30 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "dev": "nodemon ./src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "helmet": "^6.0.0",
+    "loglevel": "^1.8.0",
+    "mongoose": "^6.7.1",
+    "validator": "^13.7.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.26.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.20",
+    "prettier": "^2.7.1"
+  }
+}

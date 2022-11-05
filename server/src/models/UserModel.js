@@ -27,6 +27,10 @@ const UserSchema = new mongoose.Schema(
       type: String,
       required: [true, 'Password is required'],
       minlength: [4, 'Password is too short'],
+    },
+    memes: {
+      type: mongoose.Schema.ObjectId,
+      ref: 'meme'
     }
   },
   { timestamps: true },
@@ -34,7 +38,7 @@ const UserSchema = new mongoose.Schema(
 
 
 
-const UserModel = new mongoose.model('users', UserSchema);
+const UserModel = new mongoose.model('user', UserSchema);
 
 
 export default UserModel;

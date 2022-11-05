@@ -1,6 +1,7 @@
 import UserRouter from "./user-routes.js";
+import AuthRouter from "./auth-routes.js";
 
 
 
 
-export { UserRouter };
+export { AuthRouter, UserRouter };

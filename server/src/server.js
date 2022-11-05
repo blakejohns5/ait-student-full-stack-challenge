@@ -4,7 +4,8 @@ import cors from 'cors'
 
 import morgan from 'morgan'
 
-import { UserRouter } from './routes/index.js'
+import { AuthRouter, UserRouter } from './routes/index.js'
+import MemeRouter from './routes/meme-routes.js';
 
 
 const app = express();
@@ -19,5 +20,7 @@ app.use(express.json())
 
 
 app.use(UserRouter)
+app.use(AuthRouter)
+app.use(MemeRouter)
 
 export default app;

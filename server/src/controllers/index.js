@@ -1,10 +1,15 @@
-import { createAccount } from "./AccountController.js";
-import { getAllUsers } from "./UserController.js";
+import { signup, login } from "./AccountController.js";
 
+import { getAllMemes, getMemesByUser, createMeme, updateMeme, deleteMeme } from './MemeController.js'
 
 
 
 export {
-  createAccount,
-  getAllUsers
+  signup,
+  login,
+  createMeme, 
+  getAllMemes,
+  getMemesByUser,
+  updateMeme,
+  deleteMeme
 }

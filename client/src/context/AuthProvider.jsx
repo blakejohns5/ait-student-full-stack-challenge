@@ -1,4 +1,5 @@
 import React, { useState, createContext } from 'react';
+import { useEffect } from 'react';
 
 
 const AuthContext = createContext('');
@@ -6,7 +7,18 @@ const AuthContext = createContext('');
 
 export const AuthProvider = ({ children }) => {
   const [ isLogged, setIsLogged ] = useState(null);
+
  
+  useEffect(() =>{
+    persistUser()
+  }, [isLogged])
+  
+
+  const persistUser = () => {
+    const user = localStorage.getItem('user')
+    user && setIsLogged(user);
+  }
+
 
   const logUserIn = (user) => {
    setIsLogged(user)

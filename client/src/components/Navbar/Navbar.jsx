@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import AuthContext from '../../context/AuthProvider';
 import GifContext from '../../context/GifProvider';
 
 
@@ -7,14 +8,15 @@ import GifContext from '../../context/GifProvider';
 const Navbar = () => {
   const navigate = useNavigate();
   const { setApiCategory, } = useContext(GifContext);
+  const { logUserOut } = useContext(AuthContext);
   
 
   const setHomePage = (catValue) => {
     navigate('/home')
     setApiCategory(catValue)
-    
-
   }
+
+
 
 
 
@@ -38,7 +40,7 @@ const Navbar = () => {
       </article>
       <article className="hidden space-x-6 md:flex">
         <Link to="login"  className="hover:text-indigo-400 hover:scale-105">Login</Link>
-        <button type="button" className="hover:text-indigo-400 hover:scale-105">Logout</button>
+        <button type="button" className="hover:text-indigo-400 hover:scale-105" onClick={logUserOut}>Logout</button>
         <Link to="upload" className="hover:text-indigo-400 hover:scale-105">upload GIFs</Link>
       </article>
       
